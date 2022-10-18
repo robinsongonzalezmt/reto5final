@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Palcos!</title>
+  <meta name="description" content="" />
+  <meta name="viewport" content="width=device-width" />
+  <base href="/" />
+  <link rel="stylesheet" type="text/css" href="/webjars/bootstrap/css/bootstrap.min.css" />
+  <script type="text/javascript" src="/webjars/jquery/jquery.min.js"></script>
+  <script type="text/javascript" src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+</head>
+
+<body style="background-color: #6b9dcf">
+  <h1 style="text-align: #082e55">Alquiler palcos!</h1>
+  
+  <div class="container unauthenticated">
+    Para iniciar sesion con git hub:
+    <a href="/oauth2/authorization/github">haz click</a>
+  </div>
+  <div class="container authenticated" style="border-block-start-color: cadetblue; display: none;">
+    Autenticado como:<span id="user"></span>
+    <button onclick="  location.href = 'indexbox.html';">Ir a la app</button>
+  </div>
+
+
+</body>
+<script type="text/javascript">
+  $.get("/user", function (data) {
+    console.log(data)
+    $("#user").html(data.name);
+    $(".unauthenticated").hide()
+    $(".authenticated").show()
+
+  });
+  var logout = function () {
+    $.post("/logout", function () {
+      $("#user").html('');
+      $(".unauthenticated").show();
+      $(".authenticated").hide();
+    })
+    return true;
+  }
+</script>
+
+</html>

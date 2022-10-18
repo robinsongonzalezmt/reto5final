@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html>
+<style>
+    table th,
+    td {
+        text-align: center;
+        padding: 10px;
+        border: 1px solid blue;
+    }
+</style>
+
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <script type="text/javascript" src="/webjars/jquery/jquery.min.js"></script>
+    <script type="text/javascript" src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+
+    <title style="text-align: center">Palcos Eventos!</title>
+</head>
+
+<body style="background-color:#aed1f3;"></body>
+<div style="padding: 25px; width: 20%; margin: auto"></div>
+
+
+<h1 style="text-align: center">Bienvenidos a los mejores palcos de la ciudad!</h1>
+
+<h1>Categoria!</h1>
+
+<h2>Revisa tu Categoria.</h2>
+<table>
+    <tbody style="align-items: center">
+
+    <tr>
+        <th>idCategoria</th>
+        <th>nameCategoria</th>
+        <th>descriptionCategoria</th>
+    </tr>
+
+    <td>
+        <input type="number" id="idCategoria" placeholder="id" style="background-color: paleturquoise" ><br>
+    </td>
+    <td>
+        <input type="text" id="nameCategoria" placeholder="name" style="background-color: paleturquoise"><br>
+    </td>
+    <td>
+        <input type="text" id="descriptionCategoria" placeholder="description" style="background-color: paleturquoise"><br>
+    </td>
+    </tr>
+    <button onclick="visualizarCategoria()" , style="background-color: rgb(225, 202, 248)">VISUALIZAR CATEGORIA</button>
+    <button onclick="guardarCategoria()" , style="background-color: rgb(225, 202, 248)">GUARDAR CATEGORIA</button>
+    <button onclick="editarCategoria()" , style="background-color: rgb(225, 202, 248)">ACTUALIZAR CATEGORIA</button>
+
+    <div id="listaCategoria" style="background-color: cadetblue">
+    -----------------------------------------------------------------------------------------------------------------------------
+    </div>
+    </tbody>
+</table>
+
+
+    <h1>Palcos!</h1>
+<h2>los mejores palcos de la cuidad.</h2>
+
+<table style="padding: auto;">
+    <tbody>
+
+        <tr>
+            <th>id</th>   
+            <th>location</th>
+            <th>capacity</th>
+            <th>name</th>
+            <th>description</th>
+
+        </tr>
+        <td>
+            <input type="number" id="id" placeholder="id" style="background-color: paleturquoise" ><br>
+        </td>
+        
+        <td>
+            <input type="text" id="location" placeholder="location" style="background-color: paleturquoise" ><br>
+        </td>
+        <td>
+            <input type="number" id="capacity" placeholder="capacity" style="background-color: paleturquoise" ><br>
+        </td>
+        <td>
+            <input type="text" id="name"placeholder="name" style="background-color: paleturquoise" ><br>
+        </td>
+        <td>
+            <input type="text" id="description" placeholder="description" style="background-color: paleturquoise" ><br>
+        </td>
+
+        </tr>
+        <button onclick="visualizarPalcos()" , style="background-color: rgb(225, 202, 248)"> VISUALIZAR PALCO</button>
+        <button onclick="guardarPalcos()" , style="background-color: rgb(225, 202, 248)">GUARDAR PALCO</button>
+        <button onclick="editarPalcos()" , style="background-color: rgb(225, 202, 248)">ACTUALIZAR PALCO</button>
+</table>
+
+<div id="listaPalcos" style="background-color: cadetblue">
+-----------------------------------------------------------------------------------------------------------------------------------
+</div>
+</tbody>
+    </table>
+
+<h1>Clientes!</h1>
+
+<h2>Bienvenidos a lo mejor en palcos.</h2>
+
+<table style="padding: auto;">
+    <tbody>
+        <tr>
+            <th>idCliente</th>
+            <th>emailCliente</th>
+            <th>passwordCliente</th>
+            <th>nameCliente</th>
+            <th>ageCliente</th>
+        </tr>
+        <td>
+            <input type="number" id="idCliente" placeholder="idCliente" style="background-color: paleturquoise" ><br>
+        </td>
+
+        <td>
+            <input type="text" id="emailCliente" placeholder="emailCliente" style="background-color: paleturquoise" ><br>
+        </td>
+        <td>
+            <input type="text" id="passwordCliente" placeholder="passwordCliente" style="background-color: paleturquoise" ><br>
+        </td>
+        <td>
+            <input type="text" id="nameCliente" placeholder="nameCliente" style="background-color: paleturquoise" ><br>
+        </td>
+        <td>
+            <input type="number" id="ageCliente" placeholder="ageCliente" style="background-color: paleturquoise" ><br>
+        </td>
+        </tr>
+        <button onclick="visualizarClientes()" , style="background-color: rgb(225, 202, 248)">VISUALIZAR CLIENTE</button>
+        <button onclick="guardarClientes()" , style="background-color: rgb(225, 202, 248)">GUARDAR CLIENTE</button>
+        <button onclick="editarClientes()" , style="background-color: rgb(225, 202, 248)">ACTUALIZAR CLIENTE</button>
+
+        <div id="listaClientes" style="background-color: cadetblue">
+            --------------------------------------------------------------------------------------------------
+
+        </div>
+    </tbody>
+</table>
+
+<h1>Mensajes!</h1>
+
+<h2>Dejanos tu mensaje, pronto te responderemos...</h2>
+
+<table style="padding: auto;">
+    <tbody>
+        <tr>
+            <th>idMessage</th>
+            <th>messageText</th>
+        </tr>
+        <td>
+            <input type="number" id="idMessage" placeholder="idMessage"style="background-color: paleturquoise" ><br>
+        </td>
+        <td>
+            <input type="text" id="messageText" placeholder="messageText" style="background-color: paleturquoise" ><br>
+        </td>
+        </tr>
+        <button onclick="visualizarMensajes()" , style="background-color: rgb(225, 202, 248)">VISUALIZAR MENSAJES</button>
+        <button onclick="guardarMensajes()" , style="background-color: rgb(225, 202, 248)">GUARDAR MENSAJES</button>
+        <button onclick="editarMensajes()" , style="background-color: rgb(225, 202, 248)">ACTUALIZAR MENSAJES</button>
+
+        <div id="listaMensajes" style="background-color: cadetblue">
+            -------------------------------------------------------------------------------------------------------
+
+        </div>
+    </tbody>
+</table>
+
+<h1>Reservaciones!</h1>
+
+<h2>haz ya tu reserva!</h2>
+
+<table style="padding: auto;">
+    <tbody>
+    <tr>
+        <th>idReservation</th>
+        <th>startDate</th>
+        <th>devolutionDate</th>
+        <th>status</th>
+    </tr>
+    <td>
+        <input type="number" id="idReservation" placeholder="idReservation"style="background-color: paleturquoise" ><br>
+    </td>
+    <td>
+        <input type="date" id="startDate" placeholder="startDate"style="background-color: paleturquoise" ><br>
+    </td>
+    <td>
+        <input type="date" id="devolutionDate" placeholder="devolutionDate"style="background-color: paleturquoise" ><br>
+    </td>
+    <td>
+        <input type="text" id="status" placeholder="status" style="background-color: paleturquoise" ><br>
+    </td>
+    </tr>
+    <button onclick="visualizarReservacion()" , style="background-color: rgb(225, 202, 248)">VISUALIZAR RESERVACION</button>
+    <button onclick="guardarReservacion()" , style="background-color: rgb(225, 202, 248)">GUARDAR RESERVACION</button>
+    <button onclick="editarReservacion()" , style="background-color: rgb(225, 202, 248)">ACTUALIZAR RESERVACION</button>
+
+    <div id="listaReservacion" style="background-color: cadetblue">
+        ---------------------------------------------------------------------------------------------------------
+
+    </div>
+
+    </tbody>
+</table>
+
+    <h1>Calificaciones!</h1>
+
+    <h2>Califica el servicio.</h2>
+
+    <table style="padding: auto;">
+        <tbody>
+        <tr>
+            <th>idScore</th>
+            <th>MessageText</th>
+            <th>stars</th>
+
+        </tr>
+
+        <td>
+            <input type="number" id="idScore" placeholder="idScore"style="background-color: paleturquoise" ><br>
+        </td>
+        <td>
+            <input type="text" id="MessageText" placeholder="MessageText"style="background-color: paleturquoise" ><br>
+        </td>
+        <td>
+            <input type="number" id="stars" placeholder="stars"style="background-color: paleturquoise" ><br>
+        </td>
+        </tr>
+        <button onclick="visualizarScore()" , style="background-color: rgb(225, 202, 248)">VISUALIZAR SCORE</button>
+        <button onclick="guardarScore()" , style="background-color: rgb(225, 202, 248)">GUARDAR SCORE</button>
+        <button onclick="editarScore()" , style="background-color: rgb(225, 202, 248)">ACTUALIZAR SCORE</button>
+
+        <div id="listaScore" style="background-color: cadetblue">
+
+        </div>
+        </tbody>
+    </table>
+
+        <h1>Administradores!</h1>
+
+        <h2>credenciales.</h2>
+        
+        <table style="padding: auto;">
+            <tbody>
+            <tr>
+                <th>idAdmin</th>
+                <th>nameAdmin</th>
+                <th>emailAdmin</th>
+                <th>passwordAdmin</th>
+    
+            </tr>
+            <td>
+                <input type="number" id="idAdmin" placeholder="idAdmin" style="background-color: paleturquoise" ><br>
+            </td>
+    
+            <td>
+                <input type="text" id="nameAdmin" placeholder="nameAdmin" style="background-color: paleturquoise" ><br>
+            </td>
+            <td>
+                <input type="text" id="emailAdmin" placeholder="emailAdmin" style="background-color: paleturquoise" ><br>
+            </td>
+            <td>
+                <input type="number" id="passwordAdmin" placeholder="passwordAdmin" style="background-color: paleturquoise" ><br>
+            </td>
+        </tr>
+        <button onclick="visualizarAdmin()" , style="background-color: rgb(225, 202, 248)">VISUALIZAR ADMIN</button>
+        <button onclick="guardarAdmin()" , style="background-color: rgb(225, 202, 248)">GUARDAR ADMIN</button>
+        <button onclick="editarAdmin()" , style="background-color: rgb(225, 202, 248)">ACTUALIZAR ADMIN</button>
+
+        <div id="listaAdmin" style="background-color: cadetblue">
+        --------------------------------------------------------------------------------------------------
+
+        </div>
+    
+
+
+    </body>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js" integrity="sha384-q2kxQ16AaE6UbzuKqyBE9/u/KzioAlnx2maXQHiDX9d4/zp8Ok3f+M7DPm+Ib6IU" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+
+</html>
